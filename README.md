@@ -5,7 +5,7 @@ Minimaler Blog, gebaut mit dem offiziellen [RedwoodJS-Tutorial](https://redwoodj
 ## Links
 
 - **Repository:** https://github.com/FussballerEFZ/redwoodblog
-- **Web (Render, Static Site):** TODO: URL eintragen
+- **Web (Render, Static Site):** https://redwoodblog-web-o7ve.onrender.com
 - **API (Render, Web Service):** https://redwoodblog-api-jhdg.onrender.com/graphql
 - **Dokumentation (Matrizen, Lighthouse, Takeaways):** Notion, Modul 245
 
