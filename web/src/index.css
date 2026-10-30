@@ -1,0 +1,291 @@
+/* Blog-Styles: alles unter .blog, damit die Scaffold-Seiten (/posts) unverändert bleiben */
+
+:root {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --text: #1f2421;
+  --muted: #66706a;
+  --border: #e3e0d8;
+  --accent: #b5452b;
+  --accent-hover: #8f3420;
+  --accent-soft: #f6e3dc;
+  --on-accent: #ffffff;
+  --error: #b3261e;
+  --error-border: #e5a29a;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.05);
+  --radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161917;
+    --surface: #1f2321;
+    --text: #e8ebe9;
+    --muted: #9aa39e;
+    --border: #2f3532;
+    --accent: #e2765b;
+    --accent-hover: #f0937c;
+    --accent-soft: #3a2621;
+    --on-accent: #1a0f0c;
+    --error: #f2b8b5;
+    --error-border: #8c3b33;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.25);
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.blog {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kopfzeile */
+.blog-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.blog-header-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.blog-logo {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.blog-logo a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-logo-mark {
+  color: var(--accent);
+}
+
+.blog-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+/* min. 44px hohe Links, damit Touch-Ziele gross genug sind */
+.blog-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.blog-nav a:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.blog-nav a.blog-nav-cta {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.blog-nav a.blog-nav-cta:hover {
+  background: var(--accent-hover);
+  color: var(--on-accent);
+}
+
+/* Inhalt */
+.blog-main {
+  flex: 1;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+  box-sizing: border-box;
+}
+
+.blog-intro {
+  margin-bottom: 2rem;
+}
+
+.blog-intro h2 {
+  margin: 0 0 0.25rem;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.blog-intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.article-list {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.article-list .article {
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.article-list .article:hover {
+  transform: translateY(-2px);
+}
+
+.article-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.article-title a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.article-title a:hover {
+  color: var(--accent);
+}
+
+.article-date {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.article-body {
+  margin-top: 0.75rem;
+  white-space: pre-line;
+}
+
+.article-more {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.article-more:hover {
+  text-decoration: underline;
+}
+
+/* Detailansicht */
+.article-full {
+  padding: 2rem;
+}
+
+.article-full .article-title {
+  font-size: 2rem;
+}
+
+.article-full .article-body {
+  font-size: 1.075rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* Zustände der Cells */
+.cell-state {
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.cell-error {
+  border-style: solid;
+  border-color: var(--error-border);
+  color: var(--error);
+}
+
+/* About-Seite */
+.blog-page {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.blog-page h2 {
+  margin-top: 0;
+}
+
+/* Fusszeile */
+.blog-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .blog-intro h2,
+  .article-full .article-title {
+    font-size: 1.6rem;
+  }
+
+  .article,
+  .article-full,
+  .blog-page {
+    padding: 1.25rem;
+  }
+}

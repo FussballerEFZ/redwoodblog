@@ -22,14 +22,18 @@ export const QUERY: TypedDocumentNode<
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => (
+  <div className="cell-state">Beitrag wird geladen …</div>
+)
 
-export const Empty = () => <div>Beitrag nicht gefunden.</div>
+export const Empty = () => (
+  <div className="cell-state">Beitrag nicht gefunden.</div>
+)
 
 export const Failure = ({
   error,
 }: CellFailureProps<FindArticleQueryVariables>) => (
-  <div style={{ color: 'red' }}>Error: {error?.message}</div>
+  <div className="cell-state cell-error">Fehler: {error?.message}</div>
 )
 
 export const Success = ({
