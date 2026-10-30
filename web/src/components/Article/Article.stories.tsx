@@ -25,6 +25,11 @@ type Story = StoryObj<typeof Article>
 
 export const Primary: Story = {
   args: {
-    article: { id: 1, title: 'Titel', body: 'Text', createdAt: '2026-10-23T08:00:00Z' },
+    article: {
+      id: 1,
+      title: 'Titel',
+      body: 'Text',
+      createdAt: '2026-10-23T08:00:00Z',
+    },
   },
 }
